@@ -113,15 +113,6 @@ export default class Modal extends Component {
             {children}
           </div>
         </div>
-        {logo && (
-          <a
-            href="https://www.netlify.com"
-            className={`callOut${loading ? " visuallyHidden" : ""}`}
-          >
-            <span className="netlifyLogo" />
-            {t("coded_by")}
-          </a>
-        )}
       </div>
     );
   }
