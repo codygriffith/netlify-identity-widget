@@ -5,7 +5,7 @@ import Button from "./button";
 export default class UserForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", email: "", password: "" };
+    this.state = { name: "", email: "", password: "", targetPlan: "" };
   }
 
   handleInput = (e) => {
@@ -19,7 +19,7 @@ export default class UserForm extends Component {
 
   render() {
     const { page, message, saving, namePlaceholder, t } = this.props;
-    const { name, email, password } = this.state;
+    const { name, email, password, targetPlan } = this.state;
 
     return (
       <form
@@ -45,6 +45,7 @@ export default class UserForm extends Component {
                 required
                 oninput={this.handleInput}
               />
+              
               <div className="inputFieldIcon inputFieldName" />
             </label>
           </div>
@@ -85,6 +86,15 @@ export default class UserForm extends Component {
             </label>
           </div>
         )}
+        <input
+                className="visuallyHidden"
+                type="targetPlan"
+                name="targetPlan"
+                value={targetPlan}
+                placeholder="Free"
+                autocapitalize="off"
+                oninput={this.handleInput}
+              />
         <Button
           saving={saving}
           text={t(page.button)}
