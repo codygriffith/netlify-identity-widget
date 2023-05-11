@@ -90,6 +90,7 @@ export default class UserForm extends Component {
                 className="visuallyHidden"
                 type="targetPlan"
                 name="targetPlan"
+                id="targetPlan"
                 value={targetPlan}
                 placeholder="Free"
                 autocapitalize="off"
