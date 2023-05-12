@@ -91,7 +91,7 @@ export default class UserForm extends Component {
                 type="targetPlan"
                 name="targetPlan"
                 id="targetPlan"
-                value={targetPlan}
+                value=""
                 placeholder="Free"
                 autocapitalize="off"
                 // oninput={this.handleInput}
