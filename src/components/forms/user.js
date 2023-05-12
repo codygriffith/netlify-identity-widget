@@ -30,7 +30,7 @@ export default class UserForm extends Component {
     console.log(window.targetPlan)
     console.log(window.targetPlan.value)
 
-    this.setState({ targetPlan: window.targetPlan.value });
+    // this.setState({ targetPlan: window.targetPlan.value });
 
     return (
       <form
