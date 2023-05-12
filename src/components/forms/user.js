@@ -92,6 +92,7 @@ export default class UserForm extends Component {
             <input
               className="formControl"
               type="targetPlan"
+              id="targetPlan"
               name="targetPlan"
               value={targetPlan}
               placeholder={t("form_target_plan_placeholder")}
