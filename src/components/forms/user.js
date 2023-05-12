@@ -28,7 +28,7 @@ export default class UserForm extends Component {
     const { name, email, password, targetPlan } = this.state;
 
     console.log(window.targetPlan)
-    console.log(window.targetPlan.value)
+    // console.log(window.targetPlan.value)
 
     // this.setState({ targetPlan: window.targetPlan.value });
 
