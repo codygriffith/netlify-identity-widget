@@ -25,8 +25,7 @@ export default class UserForm extends Component {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
     console.log('blue')
-    console.log(document.getElementById('targetPlan'));
-    console.log(document.getElementById('targetPlan').value);
+    console.log(document.getElementById('targetPlan').placeholder);
 
     return (
       <form
