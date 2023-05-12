@@ -20,6 +20,7 @@ export default class UserForm extends Component {
   render() {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
+    console.log(window.targetPlan)
 
     return (
       <form
@@ -45,7 +46,7 @@ export default class UserForm extends Component {
                 required
                 oninput={this.handleInput}
               />
-              
+
               <div className="inputFieldIcon inputFieldName" />
             </label>
           </div>
@@ -87,15 +88,15 @@ export default class UserForm extends Component {
           </div>
         )}
         <input
-                className="formControl"
-                type="targetPlan"
-                name="targetPlan"
-                id="targetPlan"
-                value={targetPlan}
-                placeholder="Free"
-                autocapitalize="off"
-                oninput={this.handleInput}
-              />
+          className="formControl"
+          type="targetPlan"
+          name="targetPlan"
+          id="targetPlan"
+          value={targetPlan}
+          placeholder="Free"
+          autocapitalize="off"
+          oninput={this.handleInput}
+        />
         <Button
           saving={saving}
           text={t(page.button)}
