@@ -45,7 +45,7 @@ export default class UserForm extends Component {
                 required
                 oninput={this.handleInput}
               />
-              
+
               <div className="inputFieldIcon inputFieldName" />
             </label>
           </div>
@@ -86,16 +86,21 @@ export default class UserForm extends Component {
             </label>
           </div>
         )}
-        <input
-                // className="formControl"
-                type="targetPlan"
-                name="targetPlan"
-                id="targetPlan"
-                value=""
-                placeholder="Free"
-                autocapitalize="off"
-                // oninput={this.handleInput}
-              />
+        <div className="formGroup">
+          <label>
+            <span className="visuallyHidden">{t("form_target_plan_label")}</span>
+            <input
+              className="formControl"
+              type="targetPlan"
+              name="targetPlan"
+              value={targetPlan}
+              placeholder={t("form_target_plan_placeholder")}
+              oninput={this.handleInput}
+            />
+            <div className="inputFieldIcon inputFieldTargetPlan" />
+          </label>
+        </div>
+
         <Button
           saving={saving}
           text={t(page.button)}
