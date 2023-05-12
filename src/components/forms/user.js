@@ -87,8 +87,8 @@ export default class UserForm extends Component {
           </div>
         )}
         <input
-                className=""
-                type="targetPlan"
+                className="visuallyHidden"
+                type="test"
                 name="targetPlan"
                 id="targetPlan"
                 value='Free'
