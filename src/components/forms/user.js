@@ -30,11 +30,15 @@ export default class UserForm extends Component {
     console.log(window.targetPlan)
     // console.log(window.targetPlan.value)
 
-    try {
+    if (wind.targetPlan.value) {
       this.setState({ targetPlan: window.targetPlan.value });
-    } catch (error) {
-      console.error('Failed to set state:', error);
     }
+
+    // try {
+    //   this.setState({ targetPlan: window.targetPlan.value });
+    // } catch (error) {
+    //   console.error('Failed to set state:', error);
+    // }
     return (
       <form
         onsubmit={this.handleLogin}
