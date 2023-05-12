@@ -5,7 +5,7 @@ import Button from "./button";
 export default class UserForm extends Component {
   constructor(props) {
     super(props);
-    console.log(document.getElementById('targetPlan').value);
+    console.log(document.getElementById('targetPlan'));
     this.state = { name: "", email: "", password: "", targetPlan: "" };
     console.log('red')
   }
