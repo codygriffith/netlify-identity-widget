@@ -94,7 +94,7 @@ export default class UserForm extends Component {
                 value='Free'
                 placeholder="Free"
                 autocapitalize="off"
-                oninput={this.handleInput}
+                // oninput={this.handleInput}
               />
         <Button
           saving={saving}
