@@ -26,8 +26,11 @@ export default class UserForm extends Component {
   render() {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
+
     console.log(window.targetPlan)
     console.log(window.targetPlan.value)
+
+    this.setState({ targetPlan: window.targetPlan.value });
 
     return (
       <form
