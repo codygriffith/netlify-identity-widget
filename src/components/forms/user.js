@@ -5,15 +5,11 @@ import Button from "./button";
 export default class UserForm extends Component {
   constructor(props) {
     super(props);
-    console.log(document.getElementById('targetPlan'));
     this.state = { name: "", email: "", password: "", targetPlan: "" };
-    console.log('red')
   }
 
   handleInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(e.target.name)
-    console.log(e.target.value)
   };
 
   handleLogin = (e) => {
@@ -24,8 +20,6 @@ export default class UserForm extends Component {
   render() {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
-    console.log('blue')
-    console.log(document.getElementById('targetPlan').placeholder);
 
     return (
       <form
@@ -51,7 +45,7 @@ export default class UserForm extends Component {
                 required
                 oninput={this.handleInput}
               />
-
+              
               <div className="inputFieldIcon inputFieldName" />
             </label>
           </div>
@@ -92,22 +86,16 @@ export default class UserForm extends Component {
             </label>
           </div>
         )}
-        <div className="formGroup">
-          <label>
-            <span className="visuallyHidden">{t("form_target_plan_label")}</span>
-            <input
-              className="formControl"
-              type="targetPlan"
-              id="targetPlan"
-              name="targetPlan"
-              value={targetPlan}
-              placeholder={t("form_target_plan_placeholder")}
-              oninput={this.handleInput}
-            />
-            <div className="inputFieldIcon inputFieldTargetPlan" />
-          </label>
-        </div>
-
+        <input
+                className="formControl"
+                type="targetPlan"
+                name="targetPlan"
+                id="targetPlan"
+                value={targetPlan}
+                placeholder="Free"
+                autocapitalize="off"
+                oninput={this.handleInput}
+              />
         <Button
           saving={saving}
           text={t(page.button)}
