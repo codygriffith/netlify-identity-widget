@@ -9,7 +9,7 @@ export default class UserForm extends Component {
     this.state = { name: "", email: "", password: "", targetPlan: "" };
     console.log('red')
   }
-  
+
   handleInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
     console.log(e.target.name)
@@ -20,11 +20,12 @@ export default class UserForm extends Component {
     e.preventDefault();
     this.props.onSubmit(this.state);
   };
-  
+
   render() {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
     console.log('blue')
+    console.log(document.getElementById('targetPlan'));
 
     return (
       <form
