@@ -5,7 +5,7 @@ import Button from "./button";
 export default class UserForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", email: "", password: "", targetPlan: targetPlan.value };
+    this.state = { name: "", email: "", password: "", targetPlan: this.state.targetPlan };
   }
 
   handleInput = (e) => {
