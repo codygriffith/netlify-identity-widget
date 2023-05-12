@@ -78,7 +78,7 @@ export default class UserForm extends Component {
                 className="formControl"
                 type="password"
                 name="password"
-                value={password}
+                value=""
                 placeholder={t("form_password_placeholder")}
                 autocomplete={page.password}
                 required
