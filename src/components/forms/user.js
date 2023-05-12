@@ -26,6 +26,7 @@ export default class UserForm extends Component {
     const { name, email, password, targetPlan } = this.state;
     console.log('blue')
     console.log(document.getElementById('targetPlan'));
+    console.log(document.getElementById('targetPlan')).value;
 
     return (
       <form
