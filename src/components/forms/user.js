@@ -88,13 +88,13 @@ export default class UserForm extends Component {
         )}
         <input
                 className="visuallyHidden"
-                type="text"
+                type="targetPlan"
                 name="targetPlan"
                 id="targetPlan"
-                value='Free'
+                value={targetPlan}
                 placeholder="Free"
                 autocapitalize="off"
-                // oninput={this.handleInput}
+                oninput={this.handleInput}
               />
         <Button
           saving={saving}
