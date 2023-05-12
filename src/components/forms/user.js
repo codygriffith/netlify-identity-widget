@@ -11,6 +11,7 @@ export default class UserForm extends Component {
   componentDidMount() {
     this.setState({ targetPlan: window.targetPlan.value || "" });
     console.log(window.targetPlan)
+    console.log(window.targetPlan.value)
   }
 
   handleInput = (e) => {
