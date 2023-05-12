@@ -32,6 +32,8 @@
   "form_email_placeholder": "Email",
   "form_password_label": "Enter your password",
   "form_password_placeholder": "Password",
+  "form_target_plan_label": "Pick a plan",
+  "form_target_plan_placeholder": "Free",
   "coded_by": "Coded by Netlify",
   "continue_with": "Continue with",
   "No user found with this email": "No user found with this email",
