@@ -5,7 +5,12 @@ import Button from "./button";
 export default class UserForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", email: "", password: "", targetPlan: window.targetPlan };
+    this.state = { name: "", email: "", password: "" };
+  }
+
+  componentDidMount() {
+    this.setState({ targetPlan: window.targetPlan || "" });
+    console.log(window.targetPlan)
   }
 
   handleInput = (e) => {
