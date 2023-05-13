@@ -31,6 +31,11 @@ export default class UserForm extends Component {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
 
+    let storedPlan = localStorage.getItem('targetPlan');
+    if (storedPlan) {
+      this.setState({ targetPlan: JSON.parse(storedPlan) });
+    }
+
     // console.log(window.targetPlan)
     // console.log(window.targetPlan.value)
 
