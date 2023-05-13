@@ -14,7 +14,7 @@ export default class UserForm extends Component {
     // console.log(window.targetPlan.value)
     let storedPlan = localStorage.getItem('targetPlan');
     if (storedPlan) {
-      this.setState({ targetPlan: JSON.parse(storedPlan) });
+      this.setState({ targetPlan: storedPlan });
     }
   }
 
