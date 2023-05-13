@@ -20,6 +20,11 @@ export default class UserForm extends Component {
 
   handleInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+
+    let storedPlan = localStorage.getItem('targetPlan');
+    if (storedPlan) {
+      this.setState({ targetPlan: JSON.parse(storedPlan) });
+    }
   };
 
   handleLogin = (e) => {
