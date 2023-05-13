@@ -20,6 +20,11 @@ export default class UserForm extends Component {
 
   handleInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+    let storedPlan = localStorage.getItem('targetPlan');
+    console.log(storedPlan)
+    if (storedPlan) {
+      this.setState({ targetPlan: storedPlan });
+    }
   };
 
   handleLogin = (e) => {
@@ -31,11 +36,7 @@ export default class UserForm extends Component {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
 
-    let storedPlan = localStorage.getItem('targetPlan');
-    console.log(storedPlan)
-    if (storedPlan) {
-      this.setState({ targetPlan: storedPlan });
-    }
+
 
     // console.log(window.targetPlan)
     // console.log(window.targetPlan.value)
