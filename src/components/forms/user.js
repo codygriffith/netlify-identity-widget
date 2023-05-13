@@ -14,17 +14,12 @@ export default class UserForm extends Component {
     // console.log(window.targetPlan.value)
     let storedPlan = localStorage.getItem('targetPlan');
     if (storedPlan) {
-      this.setState({ targetPlan: storedPlan });
+      this.setState({ targetPlan: JSON.parse(storedPlan) });
     }
   }
 
   handleInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    let storedPlan = localStorage.getItem('targetPlan');
-    console.log(storedPlan)
-    if (storedPlan) {
-      this.setState({ targetPlan: storedPlan });
-    }
   };
 
   handleLogin = (e) => {
@@ -35,8 +30,6 @@ export default class UserForm extends Component {
   render() {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
-
-
 
     // console.log(window.targetPlan)
     // console.log(window.targetPlan.value)
