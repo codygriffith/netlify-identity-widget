@@ -31,16 +31,16 @@ export default class UserForm extends Component {
     const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password, targetPlan } = this.state;
 
-    console.log(window.targetPlan)
+    // console.log(window.targetPlan)
     // console.log(window.targetPlan.value)
 
-    try {
-      if (window.targetPlan.value) {
-        this.setState({ targetPlan: window.targetPlan.value });
-      }
-    } catch (error) {
-      console.error('Failed to set state:', error);
-    }
+    // try {
+    //   if (window.targetPlan.value) {
+    //     this.setState({ targetPlan: window.targetPlan.value });
+    //   }
+    // } catch (error) {
+    //   console.error('Failed to set state:', error);
+    // }
 
     // try {
     //   this.setState({ targetPlan: window.targetPlan.value });
