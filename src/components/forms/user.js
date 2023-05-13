@@ -9,9 +9,13 @@ export default class UserForm extends Component {
   }
 
   componentDidMount() {
-    this.setState({ targetPlan: window.targetPlan.value || "" });
-    console.log(window.targetPlan)
-    console.log(window.targetPlan.value)
+    // this.setState({ targetPlan: window.targetPlan.value || "" });
+    // console.log(window.targetPlan)
+    // console.log(window.targetPlan.value)
+    let storedPlan = localStorage.getItem('targetPlan');
+    if (storedPlan) {
+      this.setState({ targetPlan: JSON.parse(storedPlan) });
+    }
   }
 
   handleInput = (e) => {
