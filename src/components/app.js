@@ -26,7 +26,6 @@ const pages = {
     name: true,
     email: true,
     password: "new-password",
-    targetPlan: true,
     providers: true
   },
   amnesia: {
@@ -66,7 +65,7 @@ class App extends Component {
   clearSiteURL = (url) => this.props.store.clearSiteURL();
   clearStoreError = () => this.props.store.setError();
   handleExternalLogin = (provider) => this.props.store.externalLogin(provider);
-  handleUser = ({ name, email, password, targetPlan }) => {
+  handleUser = ({ name, email, password }) => {
     const { store } = this.props;
 
     switch (store.modal.page) {
@@ -74,7 +73,7 @@ class App extends Component {
         store.login(email, password);
         break;
       case "signup":
-        store.signup(name, email, password, targetPlan);
+        store.signup(name, email, password);
         break;
       case "amnesia":
         store.requestPasswordRecovery(email);
