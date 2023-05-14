@@ -112,7 +112,7 @@ function instantiateGotrue(APIUrl) {
 }
 
 let root;
-let iframe;
+let div;
 const iframeStyle = {
   position: "fixed",
   top: 0,
@@ -130,7 +130,7 @@ observe(store.modal, "isOpen", () => {
   if (!store.settings) {
     store.loadSettings();
   }
-  setStyle(iframe, {
+  setStyle(div, {
     ...iframeStyle,
     display: store.modal.isOpen ? "block !important" : "none"
   });
@@ -213,7 +213,7 @@ function runRoutes() {
           return;
         }
         // eslint-disable-next-line no-empty
-      } catch (e) {}
+      } catch (e) { }
     }
     document.location.hash = "";
     store.openModal("login");
@@ -249,32 +249,37 @@ function init(options = {}) {
   store.init(instantiateGotrue(APIUrl));
   store.modal.logo = logo;
   store.setNamePlaceholder(namePlaceholder);
-  iframe = document.createElement("iframe");
-  iframe.id = "netlify-identity-widget";
-  iframe.title = "Netlify identity widget";
-  iframe.onload = () => {
-    const styles = iframe.contentDocument.createElement("style");
-    styles.innerHTML = modalCSS.toString();
-    iframe.contentDocument.head.appendChild(styles);
-    root = render(
-      <Provider store={store}>
-        <App />
-      </Provider>,
-      iframe.contentDocument.body,
-      root
-    );
-    runRoutes();
-  };
-  setStyle(iframe, iframeStyle);
-  iframe.src = "about:blank";
+
+  // Create a div instead of an iframe
+  div = document.createElement("div");
+  div.id = "netlify-identity-widget";
+  div.title = "Netlify identity widget";
+
+  const styles = document.createElement("style");
+  styles.innerHTML = modalCSS.toString();
+  div.appendChild(styles);
+
+  root = render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    div,
+    root
+  );
+  runRoutes();
+
+  setStyle(div, iframeStyle); // Apply the styles to the div
+
+  div.src = "about:blank"; // This line is not needed for divs and can be removed
   const container = options.container
     ? document.querySelector(options.container)
     : document.body;
-  container.appendChild(iframe);
-  /* There's a certain case where we might have called setStyle before the iframe was ready.
-	   Make sure we take the last style and apply it */
+  container.appendChild(div);
+
+  /* There's a certain case where we might have called setStyle before the div was ready.
+     Make sure we take the last style and apply it */
   if (queuedIframeStyle) {
-    iframe.setAttribute("style", queuedIframeStyle);
+    div.setAttribute("style", queuedIframeStyle);
     queuedIframeStyle = null;
   }
 }
